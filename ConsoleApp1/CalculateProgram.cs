@@ -13,6 +13,8 @@ namespace Kata
             _console = console;
         }
 
+
+
         public void Interract()
         {
             int state = InputOutput("Enter comma separated numbers (enter to exit):");
