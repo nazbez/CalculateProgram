@@ -7,7 +7,7 @@ namespace Kata
     {
         public virtual string ReadLine()
         {
-            return Console.ReadLine();
+            return Console.ReadLine().Replace("\\n", "\n");
         }
 
         public virtual void WriteLine(string output)
