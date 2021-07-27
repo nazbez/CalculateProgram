@@ -34,8 +34,11 @@ namespace Kata.Tests
         public void Interract_EnterTheInputOnce_ResultAndOneOfferMsg()
         {
             // Arrange
-            mockConsole.SetupSequence(x => x.ReadLine()).Returns("1,2").Returns("");
-            mockCalculator.Setup(x => x.Add("1,2")).Returns(3);
+            mockConsole.SetupSequence(x => x.ReadLine())
+                .Returns("1,2")
+                .Returns("");
+            mockCalculator.Setup(x => x.Add("1,2"))
+                .Returns(3);
 
             // Act
             calculateProgram.Interract();
@@ -50,8 +53,13 @@ namespace Kata.Tests
         public void Interract_EnterTheInputMoreThanOnce_ResultsAndOfferMoreThanOnce()
         {
             // Arrange
-            mockConsole.SetupSequence(x => x.ReadLine()).Returns("1,2").Returns("3,4").Returns("");
-            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>())).Returns(3).Returns(7);
+            mockConsole.SetupSequence(x => x.ReadLine())
+                .Returns("1,2")
+                .Returns("3,4")
+                .Returns("");
+            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>()))
+                .Returns(3)
+                .Returns(7);
 
             // Act
             calculateProgram.Interract();
@@ -65,8 +73,13 @@ namespace Kata.Tests
         public void Interract_EnterTheInvalidInput_ShowException()
         {
             // Arrange
-            mockConsole.SetupSequence(x => x.ReadLine()).Returns("1,2").Returns("Test").Returns("");
-            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>())).Returns(3).Throws(new Exception("Invalid input!"));
+            mockConsole.SetupSequence(x => x.ReadLine())
+                .Returns("1,2")
+                .Returns("Test")
+                .Returns("");
+            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>()))
+                .Returns(3)
+                .Throws(new Exception("Invalid input!"));
 
             // Act
             calculateProgram.Interract();
@@ -79,8 +92,13 @@ namespace Kata.Tests
         public void Interract_EnterNumberWithMinus_ShowException()
         {
             // Arrange
-            mockConsole.SetupSequence(x => x.ReadLine()).Returns("1,2").Returns("1,-2,-3").Returns("");
-            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>())).Returns(3).Throws(new Exception("negatives not allowed: -2 -3"));
+            mockConsole.SetupSequence(x => x.ReadLine())
+                .Returns("1,2")
+                .Returns("1,-2,-3")
+                .Returns("");
+            mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>()))
+                .Returns(3)
+                .Throws(new Exception("negatives not allowed: -2 -3"));
 
             // Act
             calculateProgram.Interract();
