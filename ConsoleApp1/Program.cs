@@ -1,4 +1,6 @@
-﻿namespace Kata
+﻿using System;
+
+namespace Kata
 {
     public class Program
     {
@@ -6,7 +8,6 @@
         {
             CalculateProgram program = new CalculateProgram(new Calculator(), new ConsoleImitator());
             program.Interract();
-
 
         }
     }
