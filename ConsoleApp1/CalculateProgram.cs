@@ -36,6 +36,7 @@ namespace Kata
             try
             {
                 int result = _calculator.Add(numbers);
+
                 _console.WriteLine($"Result is: {result}");
             }
             catch (Exception err)

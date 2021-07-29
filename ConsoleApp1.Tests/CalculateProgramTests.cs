@@ -98,7 +98,7 @@ namespace Kata.Tests
                 .Returns("");
             mockCalculator.SetupSequence(x => x.Add(It.IsAny<string>()))
                 .Returns(3)
-                .Throws(new Exception("negatives not allowed: -2 -3"));
+                .Throws(new NegativesException("negatives not allowed: -2 -3"));
 
             // Act
             calculateProgram.Interract();

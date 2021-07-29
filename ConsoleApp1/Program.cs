@@ -8,7 +8,6 @@ namespace Kata
         {
             CalculateProgram program = new CalculateProgram(new Calculator(), new ConsoleImitator());
             program.Interract();
-
         }
     }
 }
